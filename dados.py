@@ -59,6 +59,7 @@ if quantidade > 0:
     print(f"A porcentagem das notas 3 foi: {porcentagem_3:.0f}%")
     print(f"A porcentagem das notas 4 foi: {porcentagem_4:.0f}%")
     print(f"A porcentagem das notas 5 foi: {porcentagem_5:.0f}%")
+
     print(f"Quantidade de notas 1: {quantidade_1}")
     print(f"Quantidade de notas 2: {quantidade_2}")
     print(f"Quantidade de notas 3: {quantidade_3}")
@@ -66,5 +67,16 @@ if quantidade > 0:
     print(f"Quantidade de notas 5: {quantidade_5}")
     print(f"Quantidade de funcionários: {quantidade}")
     print(f"Soma das notas: {total}")
+
+    # Gráfico de barras em texto
+    print("\n--- GRÁFICO DE SATISFAÇÃO ---")
+    print("Cada * representa uma resposta")
+
+    print(f"Nota 1: {'*' * quantidade_1} ({quantidade_1})")
+    print(f"Nota 2: {'*' * quantidade_2} ({quantidade_2})")
+    print(f"Nota 3: {'*' * quantidade_3} ({quantidade_3})")
+    print(f"Nota 4: {'*' * quantidade_4} ({quantidade_4})")
+    print(f"Nota 5: {'*' * quantidade_5} ({quantidade_5})")
+
 else:
     print("Nenhuma resposta encontrada.")
