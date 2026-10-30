@@ -1,4 +1,6 @@
 
+import matplotlib.pyplot as plt
+
 with open("employee_satisfaction_survey.csv", "r", encoding="utf-8") as arquivo:
     dados = arquivo.read()
 
@@ -67,14 +69,35 @@ if quantidade > 0:
     print(f"Nota 4: {quantidade_4} ({porcentagem_4:.1f}%)")
     print(f"Nota 5: {quantidade_5} ({porcentagem_5:.1f}%)")
 
-    print("\n===== GRÁFICO DE SATISFAÇÃO =====")
-    print("Cada * representa uma resposta")
+    # Criar gráfico de barras
+    notas = [1, 2, 3, 4, 5]
 
-    print(f"Nota 1: {'*' * quantidade_1}")
-    print(f"Nota 2: {'*' * quantidade_2}")
-    print(f"Nota 3: {'*' * quantidade_3}")
-    print(f"Nota 4: {'*' * quantidade_4}")
-    print(f"Nota 5: {'*' * quantidade_5}")
+    quantidades = [
+        quantidade_1,
+        quantidade_2,
+        quantidade_3,
+        quantidade_4,
+        quantidade_5
+    ]
+
+    plt.figure(figsize=(9, 5))
+
+    barras = plt.bar(
+        notas,
+        quantidades,
+        color=["#E76F51", "#F4A261", "#E9C46A", "#2A9D8F", "#264653"]
+    )
+
+    plt.title("Satisfação dos Funcionários - ACME_FOCUS")
+    plt.xlabel("Notas de satisfação")
+    plt.ylabel("Quantidade de respostas")
+
+    plt.xticks(notas)
+    plt.bar_label(barras, padding=3)
+    plt.grid(axis="y", linestyle="--", alpha=0.3)
+
+    plt.tight_layout()
+    plt.show()
 
 else:
     print("Nenhuma resposta encontrada.")
